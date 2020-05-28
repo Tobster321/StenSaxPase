@@ -7,7 +7,7 @@ public class STP {
         int poang1 = 0;
         int poang2 = 0;
         int datorpoang = 0;
-        int rundor = 3;
+        int rundor;
         Random rand = new Random();
 
 
@@ -16,6 +16,12 @@ public class STP {
         while (antalSpelare > 2 || antalSpelare < 1 ) {
             antalSpelare = Integer.parseInt(JOptionPane.showInputDialog(null, "Du måste välja antingen (1) eller (2)"));
         }
+
+        rundor = Integer.parseInt(JOptionPane.showInputDialog(null, "Hur många runder ska spelas? 3 eller 5?"));
+        while (rundor != 3 && rundor != 5) {
+            rundor = Integer.parseInt(JOptionPane.showInputDialog(null,"Fel svar! Välj antingen 3 eller 5!"));
+        }
+
 
         while (rundor > 0) {
 
