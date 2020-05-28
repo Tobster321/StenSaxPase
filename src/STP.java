@@ -60,6 +60,48 @@ public class STP {
                     JOptionPane.showMessageDialog(null, "Datorn vinner hela spelet!");
                 }
             }
+        if (antalSpelare == 2) {
+            spelare1 = Integer.parseInt(JOptionPane.showInputDialog(null,"(Bara nummer!) Spelare 1 välj Sten(1) Sax(2) eller Påse(3)"));
+            spelare2 = Integer.parseInt(JOptionPane.showInputDialog(null,"(Bara nummer!) Spelare 2 välj Sten(1) Sax(2) eller Påse(3)"));
+
+            if (spelare1 == spelare2) {
+                JOptionPane.showMessageDialog(null,"Ni båda valde samma sak");
+                rundor++;
+            }
+            else if (spelare1 == 1 && spelare2 == 2) {
+                JOptionPane.showMessageDialog(null,"Spelare 1 valde sten och Spelare 2 valde sax!" + "\n" + "Spelare 1 vinner!");
+                poang1++;
+            }
+            else if (spelare1 == 1 && spelare2 == 3) {
+                JOptionPane.showMessageDialog(null,"Spelare 1 valde sten och Spelare 2 valde påse" + "\n" + "Spelare 2 vinner!");
+                poang2++;
+            }
+            else if (spelare1 == 2 && spelare2 == 3) {
+                JOptionPane.showMessageDialog(null,"Spelare 1 valde sten och Spelare 2 valde sax!" + "\n" + "Spelare 1 vinner!");
+                poang1++;
+            }
+            else if (spelare1 == 2 && spelare2 == 1) {
+                JOptionPane.showMessageDialog(null,"Spelare 1 valde sten och Spelare 2 valde påse" + "\n" + "Spelare 2 vinner!");
+                poang2++;
+            }
+            else if (spelare1 == 3 && spelare2 == 1) {
+                JOptionPane.showMessageDialog(null,"Spelare 1 valde sten och Spelare 2 valde sax!" + "\n" + "Spelare 1 vinner!");
+                poang1++;
+            }
+            else if (spelare1 == 3 && spelare2 == 2) {
+                JOptionPane.showMessageDialog(null,"Spelare 1 valde sten och Spelare 2 valde påse" + "\n" + "Spelare 2 vinner!");
+                poang2++;
+            }
+            rundor--;
+            JOptionPane.showMessageDialog(null, "Resultat: " + "Spelare 1 har " + poang1 + " poäng och Spelare 2 har " + poang2 + " poäng!" + "\n" + rundor + " Rundor kvar!" );
+            if (rundor == 0 && poang1 > poang2) {
+                JOptionPane.showMessageDialog(null, "Spelare 1 vinner hela spelet!");
+            }
+            else if (rundor == 0 && poang2 > poang1) {
+                JOptionPane.showMessageDialog(null, "Spelare 2 vinner hela spelet!");
+            }
+        }
+        }
         }
     }
-}
+
